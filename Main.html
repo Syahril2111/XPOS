@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>XPOS — Aplikasi Kasir untuk Minimarket & UMKM</title>
+  <meta name="description" content="XPOS: aplikasi kasir mudah dipakai untuk minimarket, toko sembako, apotek, dan usaha retail. Coba gratis 14 hari." />
+  <style>
+    :root{--bg:#f8fafc;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4;--accent-2:#0f766e;--glass:rgba(255,255,255,0.6)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.45;background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f172a}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:44px;height:44px;display:grid;place-items:center;background:#0f172a;color:white;font-weight:700;border-radius:8px}
+    nav{display:flex;gap:14px;align-items:center}
+    nav button{background:transparent;border:0;padding:6px 8px;border-radius:6px;cursor:pointer;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:20px 0}
+    @media(min-width:900px){.hero{grid-template-columns:1fr 440px}}
+    h1{font-size:28px;margin:0}
+    p.lead{color:var(--muted);margin-top:10px}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:white;padding:10px 16px;border-radius:10px;border:0;cursor:pointer}
+    .btn.outline{background:transparent;color:var(--accent);border:1px solid rgba(15,118,110,0.12)}
+
+    .stats{display:flex;gap:10px;margin-top:18px}
+    .stat{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,13,15,0.04);min-width:110px}
+    .stat .value{font-weight:700}
+    .grid-3{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin-top:16px}
+    @media(min-width:720px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+    .features{display:grid;gap:12px;grid-template-columns:repeat(1,1fr);margin-top:16px}
+    @media(min-width:720px){.features{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,13,15,0.04)}
+    .card h4{margin:0 0 6px 0}
+    .muted{color:var(--muted)}
+
+    .industries{display:grid;gap:12px;grid-template-columns:repeat(1,1fr);margin-top:16px}
+    @media(min-width:900px){.industries{grid-template-columns:repeat(4,1fr)}}
+
+    .pricing{display:grid;gap:12px;grid-template-columns:repeat(1,1fr);margin-top:16px}
+    @media(min-width:900px){.pricing{grid-template-columns:repeat(3,1fr)}}
+    .price-card{padding:16px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfdfe);border:1px solid rgba(15,118,110,0.06)}
+    .price-card.highlight{border:2px solid var(--accent-2);box-shadow:0 10px 30px rgba(15,118,110,0.06)}
+
+    .testimonials{display:grid;gap:12px;grid-template-columns:repeat(1,1fr);margin-top:16px}
+    @media(min-width:900px){.testimonials{grid-template-columns:repeat(3,1fr)}}
+
+    form.leadform{display:grid;gap:10px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf2}
+    footer{margin-top:28px;padding:20px 0;border-top:1px solid #eef2f6;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    .floating{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:8px}
+    .chip{background:#fff;padding:8px 12px;border-radius:999px;box-shadow:0 6px 20px rgba(4,6,7,0.08);display:inline-flex;gap:8px;align-items:center}
+
+    /* small helpers */
+    .center{text-align:center}
+    .small{font-size:13px}
+    .faq-item{border-bottom:1px solid #f1f5f9;padding:10px 0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">X</div>
+        <div>
+          <div style="font-weight:700">XPOS</div>
+          <div class="small muted">Aplikasi Kasir untuk Minimarket & UMKM</div>
+        </div>
+      </div>
+      <nav>
+        <button onclick="scrollToId('fitur')">Fitur</button>
+        <button onclick="scrollToId('harga')">Harga</button>
+        <button onclick="scrollToId('demo')">Coba Gratis</button>
+        <button onclick="openWA('Halo, saya mau konsultasi XPOS.')">Konsultasi</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Aplikasi Kasir Modern untuk Minimarket & UMKM</h1>
+          <p class="lead">Atur penjualan, stok, dan laporan otomatis — termasuk kirim ringkasan ke WhatsApp owner tiap malam. Mudah dipakai, hemat biaya, support cepat.</p>
+          <div style="margin-top:12px">
+            <button class="btn" onclick="scrollToId('demo')">Coba Gratis 14 Hari</button>
+            <button class="btn outline" style="margin-left:8px" onclick="scrollToId('fitur')">Lihat Fitur</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><div class="value">1.200+</div><div class="muted small">Toko Terbantu</div></div>
+            <div class="stat"><div class="value">2-3 Jam</div><div class="muted small">Waktu Hemat/Hari</div></div>
+            <div class="stat"><div class="value">+98%</div><div class="muted small">Akurasi Stok</div></div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <h4>Kasir Cepat</h4>
+              <div class="muted">Scan barcode, multi-payment, cetak struk otomatis.</div>
+            </div>
+            <div class="card">
+              <h4>Manajemen Stok</h4>
+              <div class="muted">Stok masuk/keluar, alert restock, rak & varian.</div>
+            </div>
+            <div class="card">
+              <h4>Laporan Real-time</h4>
+              <div class="muted">Pantau penjualan harian, produk terlaris, margin.</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Mockup area -->
+          <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(2,6,23,0.08)">
+            <div style="background:#0f172a;color:white;padding:18px;min-height:260px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:700">XPOS • Demo</div><div style="font-size:12px;opacity:0.85">Demo</div></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;flex:1">
+                <div style="background:rgba(255,255,255,0.08);border-radius:8px"></div>
+                <div style="background:rgba(255,255,255,0.08);border-radius:8px"></div>
+                <div style="background:rgba(255,255,255,0.08);border-radius:8px"></div>
+                <div style="background:rgba(255,255,255,0.08);border-radius:8px"></div>
+                <div style="background:rgba(255,255,255,0.08);border-radius:8px"></div>
+                <div style="background:rgba(255,255,255,0.08);border-radius:8px"></div>
+              </div>
+              <div style="display:flex;gap:8px"><button class="btn" onclick="scrollToId('demo')">Coba Demo</button><button class="btn outline" onclick="scrollToId('harga')">Lihat Harga</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fitur" style="margin-top:28px">
+        <h2>Fitur Unggulan</h2>
+        <p class="muted">Segala yang Anda butuhkan untuk operasional toko yang rapi dan cepat.</p>
+        <div class="features">
+          <div class="card"><h4>Kasir Cepat</h4><div class="muted">Scan barcode, atur diskon, multi-payment, dan cetak struk otomatis.</div></div>
+          <div class="card"><h4>Manajemen Stok</h4><div class="muted">Stok masuk/keluar, minimum stok, peringatan restok.</div></div>
+          <div class="card"><h4>Harga Member & Promo</h4><div class="muted">Atur level member, harga grosir, bundling, dan periode diskon.</div></div>
+          <div class="card"><h4>Bisa Offline</h4><div class="muted">Tetap transaksi saat internet bermasalah, sinkron otomatis saat online.</div></div>
+          <div class="card"><h4>Multi-Cabang</h4><div class="muted">Pantau penjualan per cabang dan konsolidasi laporan.</div></div>
+          <div class="card"><h4>Keamanan & Backup</h4><div class="muted">Backup otomatis, kontrol akses pengguna, dan audit trail.</div></div>
+        </div>
+      </section>
+
+      <section id="industri" style="margin-top:28px">
+        <h2>Cocok untuk Beragam Usaha</h2>
+        <div class="industries">
+          <div class="card">Minimarket — Scanner barcode, manajemen rak, harga grosir.</div>
+          <div class="card">Apotek — Batch & expired, resep sederhana, laporan farmasi.</div>
+          <div class="card">F&B — Menu varian, printer dapur, meja & antrean.</div>
+          <div class="card">Toko Lainnya — ATK, bengkel, laundry, grosir, dsb.</div>
+        </div>
+      </section>
+
+      <section id="harga" style="margin-top:28px">
+        <h2>Paket Harga Sederhana</h2>
+        <p class="muted">Mulai tanpa ribet, bisa bulanan atau hemat tahunan.</p>
+        <div class="pricing">
+          <div class="price-card"><div style="font-weight:700">Starter</div><div style="font-size:24px;font-weight:800;margin-top:6px">Rp149.000</div><div class="muted small">per bulan</div><ul style="margin-top:10px"><li>1 perangkat</li><li>Semua fitur kasir</li><li>Support chat</li></ul><div style="margin-top:12px"><button class="btn" onclick="openWA('Halo, saya tertarik paket Starter XPOS')">Pilih Paket</button></div></div>
+          <div class="price-card highlight"><div style="font-weight:700">Growth</div><div style="font-size:24px;font-weight:800;margin-top:6px">Rp299.000</div><div class="muted small">per bulan</div><ul style="margin-top:10px"><li>3 perangkat</li><li>Multi-cabang</li><li>Backup otomatis</li></ul><div style="margin-top:12px"><button class="btn" onclick="openWA('Halo, saya tertarik paket Growth XPOS')">Pilih Paket</button></div></div>
+          <div class="price-card"><div style="font-weight:700">Business</div><div style="font-size:18px;margin-top:6px">Hubungi Kami</div><div class="muted small">Custom / Enterprise</div><ul style="margin-top:10px"><li>Perangkat tak terbatas</li><li>Integrasi akuntansi</li><li>Training tim</li></ul><div style="margin-top:12px"><button class="btn" onclick="openWA('Halo, saya tertarik paket Business XPOS')">Hubungi Sales</button></div></div>
+        </div>
+        <p class="small center muted" style="margin-top:8px">*Harga contoh — sesuaikan dengan skema Anda.</p>
+      </section>
+
+      <section id="testimoni" style="margin-top:28px">
+        <h2>Apa Kata Pengguna</h2>
+        <div class="testimonials">
+          <div class="card"><div style="font-weight:700">Toko Sembako Sumber Rejeki</div><div class="muted small" style="margin-top:6px">“Setelah pakai XPOS, stok jadi rapi dan laporan harian otomatis terkirim. Hemat waktu.”</div></div>
+          <div class="card"><div style="font-weight:700">Apotek Sehat Sentosa</div><div class="muted small" style="margin-top:6px">“Fitur batch & expired sangat membantu, stok lebih terkontrol.”</div></div>
+          <div class="card"><div style="font-weight:700">Kedai Kopi Harian</div><div class="muted small" style="margin-top:6px">“Transaksi cepat dan mudah, cocok buat bisnis F&B kecil.”</div></div>
+        </div>
+      </section>
+
+      <section id="demo" style="margin-top:28px">
+        <h2>Mau Coba XPOS? Gratis 14 Hari</h2>
+        <p class="muted">Isi data singkat di samping. Tim kami akan bantu instalasi/remote sampai siap dipakai.</p>
+        <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px">
+          <div style="display:grid;grid-template-columns:1fr;gap:12px">
+            <form class="leadform card" onsubmit="return submitLead(event)">
+              <input id="nama" placeholder="Nama lengkap" required />
+              <input id="bisnis" placeholder="Nama bisnis / toko" required />
+              <input id="hp" placeholder="No. HP / WhatsApp (contoh: 0812...)" required />
+              <textarea id="pesan" placeholder="Pesan (opsional)" rows="3"></textarea>
+              <button class="btn" type="submit">Kirim via WhatsApp</button>
+              <div class="small muted center">Dengan mengirim, Anda setuju dihubungi tim XPOS.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" style="margin-top:28px">
+        <h2>Pertanyaan Umum</h2>
+        <div style="max-width:800px">
+          <div class="faq-item"><div style="font-weight:700">Apakah XPOS bisa dipakai tanpa internet?</div><div class="muted small">Bisa. XPOS mendukung mode offline untuk transaksi. Saat online, data akan sinkron otomatis.</div></div>
+          <div class="faq-item"><div style="font-weight:700">Bisakah dipakai multi-cabang?</div><div class="muted small">Bisa di paket Growth/Business. Anda bisa pantau penjualan per cabang dan konsolidasinya.</div></div>
+          <div class="faq-item"><div style="font-weight:700">Apakah ada training?</div><div class="muted small">Ada. Kami sediakan video, dokumen, dan bantuan remote untuk setup awal.</div></div>
+        </div>
+      </section>
+
+      <section id="kontak" style="margin-top:28px">
+        <h2>Butuh Bantuan Cepat?</h2>
+        <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px">
+          <div class="card">
+            <div style="font-weight:700">Telepon / WhatsApp</div>
+            <div class="muted small">+62 812-3456-7890</div>
+            <div style="margin-top:8px"><button class="btn outline" onclick="openWA('Halo, saya mau tanya tentang XPOS.')">Chat WhatsApp</button></div>
+          </div>
+          <div class="card">
+            <div style="font-weight:700">Email</div>
+            <div class="muted small">hello@xpos.id</div>
+            <div style="margin-top:8px"><button class="btn outline" onclick="window.location='mailto:hello@xpos.id?subject=Info%20XPOS'">Kirim Email</button></div>
+          </div>
+          <div class="card">
+            <div style="font-weight:700">Alamat</div>
+            <div class="muted small">Jl. Contoh No.123, Jakarta</div>
+            <div style="margin-top:8px"><button class="btn outline" onclick="window.open('https://maps.google.com','_blank')">Lihat Peta</button></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;gap:12px;align-items:center"><div class="logo" style="width:36px;height:36px">X</div><div>XPOS © <span id="year"></span></div></div>
+      <div class="muted small">Kebijakan &nbsp; • &nbsp; Kontak</div>
+    </footer>
+
+    <div class="floating">
+      <button class="chip" onclick="openWA('Halo, saya mau coba XPOS.')">Chat WhatsApp</button>
+      <button class="chip" onclick="scrollToId('demo')">Coba Gratis</button>
+    </div>
+  </div>
+
+  <script>
+    // ----- CONFIG: ganti nomor WA di sini (format: 62812xxxx tanpa +/0) -----
+    const XPOS_WHATSAPP_NUMBER = '6281234567890'; // <-- ganti sesuai nomor Anda
+
+    function openWA(message){
+      const msg = encodeURIComponent(message || 'Halo, saya mau info XPOS.');
+      const url = `https://wa.me/${XPOS_WHATSAPP_NUMBER}?text=${msg}`;
+      window.open(url,'_blank');
+    }
+
+    function submitLead(e){
+      e.preventDefault();
+      const nama = document.getElementById('nama').value.trim();
+      const bisnis = document.getElementById('bisnis').value.trim();
+      const hp = document.getElementById('hp').value.trim();
+      const pesan = document.getElementById('pesan').value.trim();
+      const text = `Halo XPOS, saya ${nama} dari ${bisnis}. Saya ingin mencoba demo/trial XPOS.%0AHP: ${hp}%0APesan: ${pesan}`;
+      const url = `https://wa.me/${XPOS_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(url,'_blank');
+      return false;
+    }
+
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    // fill year
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
